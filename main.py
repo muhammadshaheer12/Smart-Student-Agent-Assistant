@@ -32,7 +32,7 @@ config = RunConfig(
 )
 
 # Define the agent
-agent = Agent(
+student_agent = Agent(
     name="Student Agent",
     instructions="You are a helpful student assistant. You can answer academic questions, give study tips, and summarize short text."
 )
