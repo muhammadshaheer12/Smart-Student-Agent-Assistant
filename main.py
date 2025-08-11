@@ -31,7 +31,7 @@ config = RunConfig(
     tracing_disabled=True
 )
 
-# Define the agent
+# Define the student agent
 student_agent = Agent(
     name="Student Agent",
     instructions="You are a helpful student assistant. You can answer academic questions, give study tips, and summarize short text."
