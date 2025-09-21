@@ -41,15 +41,12 @@ agent = Agent(
 @cl.on_chat_start
 async def on_chat_start():
     cl.user_session.set("chat_history", [])
-    welcome = (
-        "Welcome! I'm your student assistant.\n\n"
+    await cl.Message("Welcome! I'm your student assistant.\n\n"
         "Please answer the following prompts one by one:\n"
         "Ask an academic question.\n"
         "Ask for a study tip (mention topic).\n"
         "Provide a short passage to summarize.\n\n"
-        "Go ahead! Start by typing your academic question below."
-    )
-    await cl.Message(content=welcome).send()
+        "Go ahead! Start by typing your academic question below.".send()
 
 # Handle incoming messages in Chainlit
 @cl.on_message
