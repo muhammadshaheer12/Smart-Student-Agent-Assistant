@@ -58,16 +58,16 @@ async def handle_message(message: cl.Message):
       chat_history = cl.user_session.get("chat_history", []) 
       chat_history.append({"role": "user", "content": message.content})
 
-      response = await Runner.run(
+      result = await Runner.run(
             agent,
             input=chat_history,
             run_config=config     
         )
       
-      chat_history.append({"role": "assistant", "content": response.final_output})
+      chat_history.append({"role": "assistant", "content": result.final_output})
       cl.user_session.set("chat_history", chat_history)
       
-      await cl.Message(content=response.final_output).send() 
+      await cl.Message(content=result.final_output).send() 
       
     except Exception as e:
         await cl.Message(content=f"Error: {e}").send()
