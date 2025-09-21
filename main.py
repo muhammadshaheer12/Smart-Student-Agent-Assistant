@@ -46,7 +46,7 @@ async def on_chat_start():
         "Ask an academic question.\n"
         "Ask for a study tip (mention topic).\n"
         "Provide a short passage to summarize.\n\n"
-        "Go ahead! Start by typing your academic question below.".send()
+        "Go ahead! Start by typing your academic question below.").send()
 
 # Handle incoming messages in Chainlit
 @cl.on_message
